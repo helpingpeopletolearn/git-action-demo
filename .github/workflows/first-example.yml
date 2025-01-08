@@ -9,12 +9,8 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
 
-        - name: Welcome step
-          run: echo "This is my first step"
+        - name: Generate artwork
+          run: cowsay -f elephant "I am an elephant, I am very huge" >> elephant.txt
 
-        - name: List files
-          run: ls -a
-
-        - name: Read file
-          run: cat demo.txt
-        
+        - name: Show my elephant
+          run: cat elephant.txt
