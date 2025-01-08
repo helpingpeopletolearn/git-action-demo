@@ -9,11 +9,5 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
 
-        - name: Install cowsay
-          run: sudo apt-get install cowsay -y
-
-        - name: Generate artwork
-          run: cowsay -f dragon "I am an dragon, and I breath fire..." >> elephant.txt
-
-        - name: Show my elephant
-          run: cat elephant.txt
+        - name: Run shell script
+          run: ./my-script.sh
