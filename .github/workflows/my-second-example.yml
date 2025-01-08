@@ -2,6 +2,9 @@ name: My Second Workflow
 
 on: push
 
+env:
+    var1: test
+
 jobs:
     first_job:
         runs-on: ubuntu-latest
@@ -10,15 +13,10 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Run shell script
-          env:
-            var1: test
           run: |
             chmod a+x my-script.sh
             ./my-script.sh
-            echo $var1
-
-        - name: sample step
-          run: echo $var1
+            echo ${{ secrets.password }}
 
         - name: Upload dragon
           uses: actions/upload-artifact@v4
