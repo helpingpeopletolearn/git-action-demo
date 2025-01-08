@@ -10,9 +10,15 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Run shell script
+          env:
+            var1: test
           run: |
             chmod a+x my-script.sh
             ./my-script.sh
+            echo $var1
+
+        - name: sample step
+          run: echo $var1
 
         - name: Upload dragon
           uses: actions/upload-artifact@v4
@@ -40,6 +46,6 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: elephant
-            
+
         - name: Print dragon
           run: cat elephant.txt
