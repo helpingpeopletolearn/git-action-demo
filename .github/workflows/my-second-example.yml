@@ -13,12 +13,25 @@ jobs:
           run: |
             chmod a+x my-script.sh
             ./my-script.sh
+
+        - name: Upload dragon
+          uses: actions/upload-artifact@v4
+          with:
+            name: elephant
+            path: elephant.txt
+
     second_job:
         needs: first_job
         runs-on: ubuntu-latest
         steps:
+        - name: Download dragon
+          uses: actions/download-artifact@v4
+          with:
+            name: elephant
+
         - name: Search my animal
           run: grep -i "dragon" elephant.txt
+
     third_job:
         needs: second_job
         runs-on: ubuntu-latest
