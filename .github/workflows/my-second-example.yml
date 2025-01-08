@@ -1,0 +1,25 @@
+name: My First Workflow
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+
+        - name: Run shell script
+          run: |
+            chmod a+x my-script.sh
+            ./my-script.sh
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Search my animal
+          run: grep -i "dragon" elephant.txt
+    third_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Print dragon
+          run: cat elephant.txt

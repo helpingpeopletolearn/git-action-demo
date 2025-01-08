@@ -8,8 +8,3 @@ jobs:
         steps:
         - name: Checkout Repo
           uses: actions/checkout@v4
-
-        - name: Run shell script
-          run: |
-            chmod a+x my-script.sh
-            ./my-script.sh
