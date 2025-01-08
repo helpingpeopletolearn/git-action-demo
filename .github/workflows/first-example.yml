@@ -13,7 +13,7 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Generate artwork
-          run: cowsay -f elephant "I am an elephant, I am very huge" >> elephant.txt
+          run: cowsay -f dragon "I am an dragon, and I breath fire..." >> elephant.txt
 
         - name: Show my elephant
           run: cat elephant.txt
