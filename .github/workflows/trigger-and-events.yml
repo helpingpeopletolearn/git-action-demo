@@ -10,6 +10,7 @@ jobs:
           run: echo "This is from first job"
 
     deploy_job:
+        timeout-minutes: 1
         needs: build_job
         concurrency: 
             group: prod-deployment
@@ -17,6 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Download dragon
+          timeout-minutes: 2
           run: |
             echo "This is from second job"
             sleep 500s
