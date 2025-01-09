@@ -10,11 +10,13 @@ jobs:
           run: echo "This is from first job"
 
     deploy_job:
-        needs: first_job
+        needs: build_job
         concurrency: 
             group: prod-deployment
             cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
         - name: Download dragon
-          run: echo "This is from second job"
+          run: |
+            echo "This is from second job"
+            sleep 500s
