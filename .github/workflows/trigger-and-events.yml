@@ -10,6 +10,7 @@ jobs:
           run: echo "This is from first job"
 
     deploy_job:
+        if: github.ref == 'refs/heads/main'
         timeout-minutes: 1
         needs: build_job
         concurrency: 
