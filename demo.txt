@@ -1,2 +1,2 @@
 This is test file.
-Adding some text.
+Adding some text. Sample text for demo.
