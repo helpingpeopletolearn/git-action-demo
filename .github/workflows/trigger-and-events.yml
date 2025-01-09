@@ -1,4 +1,4 @@
-name: My Third Workflow
+name: Events and Triggers
 
 on: workflow_dispatch
 
