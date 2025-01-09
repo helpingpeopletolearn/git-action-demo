@@ -1,0 +1,23 @@
+name: Matix Configuration
+
+on: workflow_dispatch
+
+jobs:
+    deploy-on-ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Echo docker infor
+          run: docker info
+
+        - name: Run image
+          run: docker run hello-world
+
+    deploy-on-win:
+        needs: deploy-on-ubuntu
+        runs-on: windows-latest
+        steps:
+        - name: Echo docker infor
+          run: docker info
+
+        - name: Run image
+          run: docker run hello-world
