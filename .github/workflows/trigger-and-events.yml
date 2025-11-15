@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repo
-          run: echo "This is from first job"
+          run: echo "This is from first job."
 
     deploy_job:
         if: github.ref == 'refs/heads/main'
